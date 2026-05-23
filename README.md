@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="kiro.jpg" alt="Kiro" width="220" />
+</p>
+
 # edu-qtile
 
 Educational / tutorial repository for [Qtile](https://qtile.org/), a fully-Python tiling window manager that's both configurable in Python and extensible in Python. Part of the `~/EDU/` learning series.
