@@ -401,9 +401,9 @@ XF86MonBrightnessDown
 # CTRL + ALT KEYS
 #################################################################
 
-#Picom Toggle
+#Compositor Toggle
 ctrl + alt + o
-    ~/.config/qtile/scripts/picom-toggle.sh
+    ~/.config/qtile/scripts/fastcompmgr-toggle.sh
 
 #################################################################
 # SUPER + SHIFT KEYS
