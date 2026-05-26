@@ -402,7 +402,7 @@ XF86MonBrightnessDown
 #################################################################
 
 #Compositor Toggle
-ctrl + alt + o
+super + g
     ~/.config/qtile/scripts/fastcompmgr-toggle.sh
 
 #################################################################
