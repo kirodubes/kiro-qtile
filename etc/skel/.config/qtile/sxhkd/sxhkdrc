@@ -38,10 +38,6 @@ super + F7
 super + F8
     thunar
 
-#Audio player
-super + F9
-    lollypop
-
 #Spotify
 super + F10
     spotify
@@ -66,14 +62,6 @@ super + e
 super + w
     vivaldi-stable
 
-#Conky-toggle
-super + c
-    conky-toggle
-
-#killall conky
-super + ctrl + c
-    killall conky
-
 #Htop
 #super + h
 #    urxvt 'htop task manager' -e htop
@@ -82,25 +70,13 @@ super + ctrl + c
 super + x
     archlinux-logout
 
-#powermenu
-super + shift + x
-    arcolinux-powermenu
-
 #Rofi theme selector
 super + r
     rofi-theme-selector
 
-#Urxvt
-super + t
-    urxvt
-
 #Pavucontrol
 super + v
     pavucontrol
-
-#Audio player
-super + m
-    lollypop
 
 #alacritty
 super + Return
@@ -149,21 +125,9 @@ super + shift + s
 # CONTROL + ALT KEYS
 #################################################################
 
-#arcolinux-welcome-app
-ctrl + alt + w
-     arcolinux-welcome-app
-
 #archlinux-tweak-tool
 ctrl + alt + e
     archlinux-tweak-tool
-
-#conky-rotate
-ctrl + alt + Next
-     conky-rotate -n
-
-#conky-rotate
-ctrl + alt + Prior
-    conky-rotate -p
 
 #File-Manager
 ctrl + alt + b
@@ -180,10 +144,6 @@ ctrl + alt + g
 #Firefox
 ctrl + alt + f
      firefox
-
-#Nitrogen
-ctrl + alt + i
-     nitrogen
 
 #archlinux-logout
 ctrl + alt + k
@@ -282,30 +242,6 @@ alt + F3
 
 
 #################################################################
-#VARIETY KEYS WITH PYWAL
-#################################################################
-
-#Wallpaper trash
-alt + shift + t
-    variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper next
-alt + shift + n
-    variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper previous
-alt + shift + p
-    variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper favorite
-alt + shift + f
-    variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#Wallpaper update
-alt + shift + u
-    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-
-#################################################################
 # CONTROL + SHIFT KEYS
 #################################################################
 
@@ -320,7 +256,7 @@ ctrl + shift + Escape
 
 #Scrot
 Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+    scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 
 #screeenshooter
 ctrl + Print
@@ -401,9 +337,13 @@ XF86MonBrightnessDown
 # CTRL + ALT KEYS
 #################################################################
 
-#Compositor Toggle
+#Compositor Toggle (fastcompmgr)
 super + g
     ~/.config/qtile/scripts/fastcompmgr-toggle.sh
+
+#Picom Toggle
+super + p
+    ~/.config/qtile/scripts/picom-toggle.sh
 
 #################################################################
 # SUPER + SHIFT KEYS
