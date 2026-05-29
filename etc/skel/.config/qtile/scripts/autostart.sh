@@ -39,8 +39,11 @@ run pamac-tray &
 run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
-#picom --config $HOME/.config/qtile/scripts/picom.conf &
-fastcompmgr -c &
+# Compositor: picom by default. fastcompmgr is faster/lighter but breaks
+# fullscreen for some apps (VLC stays tiled, Sublime misbehaves); picom honours
+# their fullscreen requests correctly. Toggle at runtime: super+p picom, super+g fastcompmgr.
+picom --config $HOME/.config/qtile/scripts/picom.conf &
+#fastcompmgr -c &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
