@@ -337,18 +337,18 @@ def init_widgets_list(include_tray=True):
                  padding=8,
                  max_chars=40,
                  ),
+        widget.CPU(
+                 foreground=colors[4],
+                 padding=8,
+                 mouse_callbacks={"Button1": lambda: qtile.spawn(myTerm + " -e btop")},
+                 format='Cpu: {load_percent:03.0f}%',
+                 ),
         widget.GenPollText(
                  update_interval=300,
                  func=lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
                  foreground=colors[3],
                  padding=8,
                  fmt='{}',
-                 ),
-        widget.CPU(
-                 foreground=colors[4],
-                 padding=8,
-                 mouse_callbacks={"Button1": lambda: qtile.spawn(myTerm + " -e btop")},
-                 format='Cpu: {load_percent}%',
                  ),
         widget.Memory(
                  foreground=colors[8],
