@@ -182,15 +182,54 @@ keys.extend([
     Key([mod, "shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
 ])
 
+
+def drag_window(qtile, x, y):
+    """Super+drag handler. Floating windows are repositioned as before; a tiled
+    window dragged onto another screen re-tiles there (joins that screen's group)
+    instead of floating."""
+    win = qtile.current_window
+    if win is None:
+        return
+    if win.floating:
+        win.set_position_floating(x, y)
+        return
+    px, py = qtile.core.get_mouse_position()
+    for idx, screen in enumerate(qtile.screens):
+        if (screen.x <= px < screen.x + screen.width
+                and screen.y <= py < screen.y + screen.height):
+            if screen is not qtile.current_screen:
+                win.togroup(screen.group.name)
+                qtile.focus_screen(idx, warp=False)
+                # qtile suppresses focus/relayout mid-drag (see Group.focus);
+                # force it so the window tiles and paints immediately instead
+                # of waiting for the next click.
+                win.group.focus(win, warp=False, force=True)
+            break
+
 # ── Groups (qtile-erik bindings, DoomOne circle labels from DTOS) ─────────
 groups = []
 
-# FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+def detect_group_names():
+    """Return group names matching the active keyboard layout.
 
-# FOR AZERTY KEYBOARDS
-# group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft",
-#                "section", "egrave", "exclam", "ccedilla", "agrave",]
+    Belgian AZERTY ('be') emits these keysyms on the unshifted number row, so
+    Super+<physical 1..0> only reaches the group bindings when the names match
+    them. Every other layout (QWERTY) just uses plain digits.
+    """
+    azerty_be = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft",
+                 "section", "egrave", "exclam", "ccedilla", "agrave",]
+    qwerty = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+    try:
+        out = subprocess.check_output(["setxkbmap", "-query"], text=True)
+        for line in out.splitlines():
+            if line.startswith("layout:") and line.split()[1].split(",")[0] == "be":
+                return azerty_be
+    except Exception:
+        pass
+    return qwerty
+
+
+group_names = detect_group_names()
 
 # Circle labels from the DTOS design.
 group_labels = ["⬤", "⬤", "⬤", "⬤", "⬤", "⬤", "⬤", "⬤", "⬤", "⬤",]
@@ -412,7 +451,7 @@ if __name__ in ["config", "__main__"]:
 
 # ── Mouse ────────────────────────────────────────────────────────────────
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
+    Drag([mod], "Button1", lazy.function(drag_window),
          start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(),
          start=lazy.window.get_size()),

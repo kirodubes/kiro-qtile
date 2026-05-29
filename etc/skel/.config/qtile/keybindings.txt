@@ -10,18 +10,20 @@
   super + KP_Enter          alacritty (terminal)
   ctrl + alt + Return       alacritty (terminal)
   ctrl + alt + t            alacritty (terminal)
+  F12                       alacritty (terminal)
   super + shift + Return    thunar (file manager)
   super + F8                thunar (file manager)
-  ctrl + alt + b            thunar (file manager)
   super + d                 rofi drun (themed app launcher)
+  super + r                 rofi drun (themed app launcher)
   super + F12               rofi drun
   super + F11               rofi drun (fullscreen)
   super + shift + d         dmenu_run
-  super + w                 vivaldi (browser)
   super + F1                vivaldi (browser)
   ctrl + alt + v            vivaldi (browser)
-  ctrl + alt + f            firefox
+  ctrl + alt + b            brave (browser)
+  ctrl + alt + c            chromium
   ctrl + alt + g            chromium
+  ctrl + alt + f            firefox
   ctrl + alt + o            opera
   super + e                 code (VSCode)
   super + F2                code (VSCode)
@@ -36,15 +38,13 @@
   ctrl + alt + d            obs
   ctrl + alt + e            archlinux-tweak-tool
   ctrl + alt + q            alacritty-tweak-tool
+  ctrl + alt + a            alacritty-tweak-tool
   ctrl + alt + p            pamac-manager
-  ctrl + alt + m            xfce4-settings-manager
-  ctrl + alt + c            catfish (file search)
+  ctrl + alt + m            mintstick (USB image writer)
   ctrl + alt + , (comma)    mintstick (USB image writer)
   ctrl + alt + End          btop (in alacritty)
-  ctrl + alt + a            xfce4-appfinder
   alt + F2                  xfce4-appfinder (collapsed)
   alt + F3                  xfce4-appfinder
-  F12                       xfce4-terminal (drop-down)
 
 ── 2. Window Management ───────────────────────────────────────────────────────
   super + q                 close focused window
@@ -110,8 +110,7 @@
   super + ctrl + shift + F1 update-system
   super + g                 toggle compositor (fastcompmgr)
   super + p                 toggle compositor (picom)
-  super + r                 rofi-theme-selector
-  ctrl + alt + r            rofi-theme-selector
+  alt + r                   rofi-theme-selector
   alt + n                   wallpaper: next (variety)
   alt + p                   wallpaper: previous
   alt + t                   wallpaper: trash

@@ -62,10 +62,6 @@ super + F12
 super + e
     code
 
-#Browser
-super + w
-    vivaldi-stable
-
 #Htop
 #super + h
 #    urxvt 'htop task manager' -e htop
@@ -78,9 +74,9 @@ super + x
 super + shift + x
     edu-powermenu
 
-#Rofi theme selector
+#Rofi launcher
 super + r
-    rofi-theme-selector
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/qtile/rofi/launcher2.rasi
 
 #Pavucontrol
 super + v
@@ -161,13 +157,13 @@ ctrl + alt + ,
 ctrl + alt + End
     alacritty -e btop
 
-#File-Manager
+#Brave
 ctrl + alt + b
-     thunar
+     brave --password-store=basic
 
-#Catfish
+#Chromium
 ctrl + alt + c
-     catfish
+     chromium -no-default-browser-check
 
 #Chromium
 ctrl + alt + g
@@ -189,17 +185,13 @@ ctrl + alt + l
 ctrl + alt + p
     pamac-manager
 
-#Xfce4-settings-manager
+#Mintstick
 ctrl + alt + m
-     xfce4-settings-manager
+     mintstick -m iso
 
 #Pulse Audio Control
 ctrl + alt + u
      pavucontrol
-
-#Rofi theme selector
-ctrl + alt + r
-  rofi-theme-selector
 
 #Spotify
 ctrl + alt + s
@@ -217,9 +209,9 @@ ctrl + alt + t
 ctrl + alt + v
     vivaldi-stable
 
-#Xfce4-appfinder
+#alacritty-tweak-tool
 ctrl + alt + a
-    xfce4-appfinder
+    alacritty-tweak-tool
 
 
 #Keyboard dependent
@@ -231,6 +223,10 @@ ctrl + alt + a
 #################################################################
 # ALT + ... KEYS
 #################################################################
+
+#Rofi theme selector
+alt + r
+    rofi-theme-selector
 
 #Wallpaper trash
 alt + t
@@ -334,9 +330,9 @@ ctrl + super + Print
 #     FUNCTION KEYS
 #################################################################
 
-#xfce4-terminal dropdown
+#alacritty
 F12
-    xfce4-terminal --drop-down
+    alacritty
 
 
 #################################################################
