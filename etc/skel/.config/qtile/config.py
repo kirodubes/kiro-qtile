@@ -272,8 +272,8 @@ def init_widgets_list(include_tray=True):
                  filename="~/.config/qtile/icons/favicon-32.png",
                  scale="False",
                  mouse_callbacks={"Button1": lambda: qtile.spawn(
-                     f"yad --text-info --filename={home}/.config/qtile/sxhkd/sxhkdrc "
-                     "--title=Keybindings --width=750 --height=850")},
+                     "rofi -no-config -no-lazy-grab -show drun -modi drun "
+                     f"-theme {home}/.config/qtile/rofi/launcher2.rasi")},
                  ),
         widget.Prompt(
                  font="Ubuntu Mono",

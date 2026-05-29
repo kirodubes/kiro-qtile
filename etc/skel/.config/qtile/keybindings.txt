@@ -1,0 +1,128 @@
+###############################################################################
+#  KEYBINDINGS — qtile
+#  Source: ~/.config/qtile/config.py + ~/.config/qtile/sxhkd/sxhkdrc
+#  Generated: 2026.05.29 by /kiro-create-keybindings — DO NOT EDIT BY HAND
+###############################################################################
+
+── 1. Applications & Launchers ───────────────────────────────────────────────
+  super + Return            alacritty (terminal)
+  super + t                 alacritty (terminal)
+  super + KP_Enter          alacritty (terminal)
+  ctrl + alt + Return       alacritty (terminal)
+  ctrl + alt + t            alacritty (terminal)
+  super + shift + Return    thunar (file manager)
+  super + F8                thunar (file manager)
+  ctrl + alt + b            thunar (file manager)
+  super + d                 rofi drun (themed app launcher)
+  super + F12               rofi drun
+  super + F11               rofi drun (fullscreen)
+  super + shift + d         dmenu_run
+  super + w                 vivaldi (browser)
+  super + F1                vivaldi (browser)
+  ctrl + alt + v            vivaldi (browser)
+  ctrl + alt + f            firefox
+  ctrl + alt + g            chromium
+  ctrl + alt + o            opera
+  super + e                 code (VSCode)
+  super + F2                code (VSCode)
+  super + F3                inkscape
+  super + F4                gimp
+  super + F5                meld
+  super + F6                vlc
+  super + F7                virtualbox
+  super + F9                lollypop (audio player)
+  super + F10               spotify
+  ctrl + alt + s            spotify
+  ctrl + alt + d            obs
+  ctrl + alt + e            archlinux-tweak-tool
+  ctrl + alt + q            alacritty-tweak-tool
+  ctrl + alt + p            pamac-manager
+  ctrl + alt + m            xfce4-settings-manager
+  ctrl + alt + c            catfish (file search)
+  ctrl + alt + , (comma)    mintstick (USB image writer)
+  ctrl + alt + End          btop (in alacritty)
+  ctrl + alt + a            xfce4-appfinder
+  alt + F2                  xfce4-appfinder (collapsed)
+  alt + F3                  xfce4-appfinder
+  F12                       xfce4-terminal (drop-down)
+
+── 2. Window Management ───────────────────────────────────────────────────────
+  super + q                 close focused window
+  super + shift + q         close focused window
+  super + f                 toggle fullscreen
+  super + shift + space     toggle floating
+  super + h / j / k / l     focus left / down / up / right
+  super + Left/Down/Up/Right focus left / down / up / right
+  super + shift + h/j/k/l   move window left / down / up / right (bsp)
+  super + shift + Up/Down   move window up / down (monadtall)
+  super + Escape            xkill (click a window to force-kill)
+
+── 3. Workspaces / Tags / Groups ─────────────────────────────────────────────
+  super + 1..0              switch to workspace 1–10
+  super + shift + 1..0      send window to workspace 1–10 & follow
+  super + Tab               next group
+  super + shift + Tab       previous group
+  alt + Tab                 next group
+  alt + shift + Tab         previous group
+
+── 4. Layout & Tiling ─────────────────────────────────────────────────────────
+  super + space             next layout
+  super + n                 normalize (reset window sizes)
+  super + ctrl + l/Right    grow right
+  super + ctrl + h/Left     grow left / shrink
+  super + ctrl + k/Up       grow up / fewer master windows
+  super + ctrl + j/Down     grow down / more master windows
+  super + shift + f         flip layout (monadtall/wide)
+  super + alt + k/j/l/h     flip up / down / right / left (bsp)
+
+── 5. Multi-monitor ───────────────────────────────────────────────────────────
+  super + shift + Right     move window to next screen
+  super + shift + Left      move window to previous screen
+
+── 6. Multimedia & Hardware ───────────────────────────────────────────────────
+  XF86AudioRaiseVolume      volume +10% (amixer)
+  XF86AudioLowerVolume      volume -10% (amixer)
+  XF86AudioMute             toggle mute
+  XF86AudioPlay             play / pause (playerctl)
+  XF86AudioNext             next track
+  XF86AudioPrev             previous track
+  XF86AudioStop             stop
+  XF86MonBrightnessUp       brightness +10 (xbacklight)
+  XF86MonBrightnessDown     brightness -10 (xbacklight)
+  super + v                 pavucontrol (audio mixer)
+  ctrl + alt + u            pavucontrol (audio mixer)
+
+── 7. Screenshots ─────────────────────────────────────────────────────────────
+  Print                     scrot — full screen, saved to Pictures
+  ctrl + Print              xfce4-screenshooter
+  ctrl + shift + Print      gnome-screenshot (interactive)
+  ctrl + super + Print      flameshot gui (region)
+
+── 8. System & Session ────────────────────────────────────────────────────────
+  super + x                 archlinux-logout
+  ctrl + alt + k            archlinux-logout
+  ctrl + alt + l            archlinux-logout
+  super + shift + x         edu-powermenu
+  super + shift + r         restart qtile
+  super + shift + s         reload sxhkd
+  ctrl + shift + Escape     xfce4-taskmanager
+  ctrl + alt + shift + F1   update-system
+  super + ctrl + shift + F1 update-system
+  super + g                 toggle compositor (fastcompmgr)
+  super + p                 toggle compositor (picom)
+  super + r                 rofi-theme-selector
+  ctrl + alt + r            rofi-theme-selector
+  alt + n                   wallpaper: next (variety)
+  alt + p                   wallpaper: previous
+  alt + t                   wallpaper: trash
+  alt + f                   wallpaper: favorite
+  alt + Right               wallpaper: next
+  alt + Left                wallpaper: previous
+  alt + Up                  wallpaper: pause rotation
+  alt + Down                wallpaper: resume rotation
+  super + ctrl + space      wallpaper: selector
+  alt + shift + n           wallpaper: next + pywal recolor
+  alt + shift + p           wallpaper: previous + pywal recolor
+  alt + shift + t           wallpaper: trash + pywal recolor
+  alt + shift + f           wallpaper: favorite + pywal recolor
+  alt + shift + u           pywal: recolor from current wallpaper
