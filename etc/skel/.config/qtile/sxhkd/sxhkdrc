@@ -38,6 +38,10 @@ super + F7
 super + F8
     thunar
 
+#Audio player
+super + F9
+    lollypop
+
 #Spotify
 super + F10
     spotify
@@ -70,6 +74,10 @@ super + w
 super + x
     archlinux-logout
 
+#powermenu
+super + shift + x
+    edu-powermenu
+
 #Rofi theme selector
 super + r
     rofi-theme-selector
@@ -77,6 +85,10 @@ super + r
 #Pavucontrol
 super + v
     pavucontrol
+
+#Alacritty
+super + t
+    alacritty
 
 #alacritty
 super + Return
@@ -128,6 +140,26 @@ super + shift + s
 #archlinux-tweak-tool
 ctrl + alt + e
     archlinux-tweak-tool
+
+#obs
+ctrl + alt + d
+    obs
+
+#alacritty-tweak-tool
+ctrl + alt + q
+    alacritty-tweak-tool
+
+#Opera
+ctrl + alt + o
+    opera
+
+#Mintstick
+ctrl + alt + ,
+     mintstick -m iso
+
+#btop
+ctrl + alt + End
+    alacritty -e btop
 
 #File-Manager
 ctrl + alt + b
@@ -232,6 +264,10 @@ alt + Up
 alt + Down
     variety --resume
 
+#wallpaper selector
+super + ctrl + space
+    variety --selector
+
 #Xfce4-appfinder
 alt + F2
     xfce4-appfinder --collapsed
@@ -240,6 +276,30 @@ alt + F2
 alt + F3
     xfce4-appfinder
 
+
+#################################################################
+#VARIETY KEYS WITH PYWAL
+#################################################################
+
+#Wallpaper trash
+alt + shift + t
+    variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper next
+alt + shift + n
+    variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper previous
+alt + shift + p
+    variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper favorite
+alt + shift + f
+    variety -f && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+
+#Wallpaper update
+alt + shift + u
+    wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
 
 #################################################################
 # CONTROL + SHIFT KEYS
@@ -258,7 +318,7 @@ ctrl + shift + Escape
 Print
     scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 
-#screeenshooter
+#screenshooter
 ctrl + Print
      xfce4-screenshooter
 
@@ -266,6 +326,9 @@ ctrl + Print
 ctrl + shift + Print
      gnome-screenshot -i
 
+#flameshot
+ctrl + super + Print
+     flameshot gui
 
 #################################################################
 #     FUNCTION KEYS
@@ -344,6 +407,13 @@ super + g
 #Picom Toggle
 super + p
     ~/.config/qtile/scripts/picom-toggle.sh
+
+#update
+ctrl + alt + shift + F1
+   update-system
+
+super + ctrl + shift + F1
+   update-system
 
 #################################################################
 # SUPER + SHIFT KEYS
