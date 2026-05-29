@@ -67,6 +67,9 @@ keys = [
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
 
+    # ALT + SHIFT KEYS
+    Key(["mod1", "shift"], "r", lazy.reload_config()),
+
 
     # QTILE LAYOUT KEYS
     Key([mod], "n", lazy.layout.normalize()),
@@ -130,8 +133,8 @@ keys = [
         ),
 
 
-    # FLIP LAYOUT FOR MONADTALL/MONADWIDE
-    Key([mod, "shift"], "f", lazy.layout.flip()),
+    # MAXIMIZE (fills screen but keeps the bar; super+f is true fullscreen)
+    Key([mod, "shift"], "f", lazy.window.toggle_maximize()),
 
     # FLIP LAYOUT FOR BSP
     Key([mod, "mod1"], "k", lazy.layout.flip_up()),

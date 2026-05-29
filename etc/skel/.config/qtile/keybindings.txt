@@ -50,6 +50,7 @@
   super + q                 close focused window
   super + shift + q         close focused window
   super + f                 toggle fullscreen
+  super + shift + f         toggle maximize (fills screen, bar stays)
   super + shift + space     toggle floating
   super + h / j / k / l     focus left / down / up / right
   super + Left/Down/Up/Right focus left / down / up / right
@@ -72,7 +73,6 @@
   super + ctrl + h/Left     grow left / shrink
   super + ctrl + k/Up       grow up / fewer master windows
   super + ctrl + j/Down     grow down / more master windows
-  super + shift + f         flip layout (monadtall/wide)
   super + alt + k/j/l/h     flip up / down / right / left (bsp)
 
 ── 5. Multi-monitor ───────────────────────────────────────────────────────────
@@ -104,6 +104,7 @@
   ctrl + alt + l            archlinux-logout
   super + shift + x         edu-powermenu
   super + shift + r         restart qtile
+  alt + shift + r           reload qtile config (lightweight)
   super + shift + s         reload sxhkd
   ctrl + shift + Escape     xfce4-taskmanager
   ctrl + alt + shift + F1   update-system

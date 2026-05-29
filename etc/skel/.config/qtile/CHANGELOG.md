@@ -44,6 +44,18 @@
   externally (likely Insync sync), not by this change.
 - Changed the bar logo from `icons/archlinux-white.svg` to `icons/favicon-32.png`
   (`widget.Image` in `config.py`).
+- **Added a lightweight config-reload binding.** `alt+shift+r` now runs
+  `lazy.reload_config()` (re-reads `config.py` in the running process — instant, no
+  flicker, windows untouched), alongside the existing `super+shift+r` full
+  `lazy.restart()`. Used `"mod1"` literal, not the `mod1 = "alt"` variable, which qtile
+  rejects as an "Unknown modifier". Documented in `keybindings.txt` section 8.
+- **Repointed `super+shift+f` to maximize.** Originally `lazy.layout.flip()`
+  (monadtall/wide master-side flip), briefly remapped to `toggle_fullscreen`, then
+  settled on `lazy.window.toggle_maximize()` so it pairs cleanly with `super+f`:
+  `super+f` = true fullscreen (1920×1080, bar hidden), `super+shift+f` = maximize
+  (1920×1042 @ y=38, bar stays visible). The layout-flip binding is displaced; bsp flip
+  remains on `super+alt+h/j/k/l`. Moved in `keybindings.txt` from section 4 to
+  section 2.
 
 ### What Changed (earlier)
 - Created **qtile-kiro**, a new qtile config merging the DTOS/CachyOS visual design
@@ -78,3 +90,4 @@
 - `sxhkd/sxhkdrc`, `scripts/`, `rofi/`, `themes/`, `arcobattery.py` (copied from qtile-erik)
 - `icons/` (DTOS bar icons + qtile-erik horizontal battery icons)
 - `README.md`, `TODO.md`, `IDEAS.md` (new)
+- `keybindings.txt` (added `alt+shift+r` reload entry)
