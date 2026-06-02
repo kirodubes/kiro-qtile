@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026.06.01
+
+### What Changed
+- Added a global keybinding `super + ctrl + s` that launches **kiro-keybindings**, the new searchable Qt6/PySide6 keybindings cheatsheet (a cross-desktop Kiro feature). `super + ctrl + s` is the universal cheatsheet hotkey across all Kiro tiling window managers ("S" = Shortcuts; AZERTY-safe).
+
+### Technical Details
+- `sxhkd/sxhkdrc`: new binding under the "SUPER + ... KEYS" section (qtile delegates app keys to sxhkd) → `super + ctrl + s` runs `kiro-keybindings`.
+- `keybindings.txt`: fully regenerated via /kiro-keybindings-all-twms; the new opener now appears under Applications & Launchers.
+
+### Files Modified
+- etc/skel/.config/qtile/sxhkd/sxhkdrc
+- etc/skel/.config/qtile/keybindings.txt
+
 ## 2026.05.26
 
 ### What Changed

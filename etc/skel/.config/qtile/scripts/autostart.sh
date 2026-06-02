@@ -16,15 +16,14 @@ function run {
 #xrandr --output DP2 --primary --mode 1920x1080 --rate 60.00 --output LVDS1 --off &
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
-#autorandr horizontal
 
-##changed via give-me-azerty-qtile
-#setxkbmap be
-
-#apply saved screen layout if it exists
-if [ -f "$HOME/.screenlayout/erik.sh" ]; then
-  "$HOME/.screenlayout/erik.sh" &
-fi
+# ── Monitor layout ────────────────────────────────────────────────────────────
+# Apply a saved arandr/xrandr screen layout named after the current user.
+# Generate your layout with arandr, save it to ~/.screenlayout/<username>.sh
+# Uncomment the xrandr line below if you are running inside VirtualBox.
+#run xrandr --output Virtual-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+# screen layout generated with arandr
+[ -f "$HOME/.screenlayout/$(whoami).sh" ] && sh "$HOME/.screenlayout/$(whoami).sh"
 
 #set the wallpaper
 feh --bg-fill /usr/share/backgrounds/kiro/kiro-wallpaper.jpg &

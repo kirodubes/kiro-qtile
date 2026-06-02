@@ -2,7 +2,7 @@
   <img src="kiro.jpg" alt="Kiro" width="220" />
 </p>
 
-# edu-qtile
+# kiro-qtile
 
 Educational / tutorial repository for [Qtile](https://qtile.org/), a fully-Python tiling window manager that's both configurable in Python and extensible in Python. Part of the `~/EDU/` learning series.
 
@@ -10,6 +10,10 @@ Educational / tutorial repository for [Qtile](https://qtile.org/), a fully-Pytho
 
 - `etc/skel/` — Qtile user config that lands in `/etc/skel/`.
 - `setup.sh`, `up.sh`, `cleanup.sh` — standard EDU bash scaffold.
+
+## Keybindings
+
+Press **`Super + Ctrl + S`** to open the searchable **kiro-keybindings** cheatsheet — an on-screen, type-to-filter list of every shortcut, identical across all Kiro desktops. The full list also ships as a plain-text [`keybindings.txt`](etc/skel/.config/qtile/keybindings.txt) in the config directory.
 
 ## Installation
 
@@ -23,7 +27,7 @@ Server = https://erikdubois.github.io/$repo/$arch
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S edu-qtile-git
+sudo pacman -S kiro-qtile
 ```
 
 You'll also need Qtile itself:
@@ -35,8 +39,8 @@ sudo pacman -S qtile
 ### Manual
 
 ```bash
-git clone https://github.com/erikdubois/edu-qtile.git
-cd edu-qtile
+git clone https://github.com/kirodubes/kiro-qtile.git
+cd kiro-qtile
 sudo cp -r etc/skel/. /etc/skel/
 ```
 

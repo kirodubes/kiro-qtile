@@ -1,4 +1,4 @@
-# CLAUDE.md — edu-qtile
+# CLAUDE.md — kiro-qtile
 
 ## Project overview
 
