@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026.06.02
+
+### What Changed
+- Brought `scripts/autostart.sh` in line with the canonical [TWM autostart standard](/home/erik/Insync/Kiro/Kiro-HQ/AUTOSTART_TEMPLATE.md). Documented header, `# ──` sections in standard order, no rubbish — same apps qtile already autostarted.
+- Removed the dead `#xrandr --output VGA-1 …` reference lines above the monitor block and the trailing pile of commented `#run discord/firefox/spotify/...` examples.
+- Adopted the standard `.fehbg`-restore wallpaper pattern (fallback to the Kiro wallpaper).
+- Removed the redundant `.bin/give-me-azerty-be-qtile` script: `config.py` already auto-detects the keyboard layout at startup (`setxkbmap -query` → azerty_be / qwerty keys), so the manual switch was both unnecessary and broken (it `cp`-ed a non-existent `config-azerty.py` over the smart config).
+
+### Technical Details
+- `function run { … pgrep -x $(basename $1 | head -c 15) … }` → canonical POSIX `run()` with quoted args; dropped redundant trailing `&` on `run` lines (the helper already backgrounds). Converted bare `numlockx/blueberry-tray/notifyd/polkit` launches to `run` calls.
+- Preserved qtile's documented per-WM exceptions: **picom** is the default compositor (not fastcompmgr — fullscreen rationale kept), super+p/super+g toggles intact, and there is **no WM-loop tail** (qtile calls this script from its config.py hook). qtile's native bar means no status-bar line.
+- Validated with `bash -n`.
+
+### Files Modified
+- etc/skel/.config/qtile/scripts/autostart.sh
+- etc/skel/.bin/give-me-azerty-be-qtile (removed)
+
 ## 2026.06.01
 
 ### What Changed
