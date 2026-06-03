@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026.06.03
+
+### What Changed
+- **Rofi colour-theme switcher** — `Super + Shift + T` opens a rofi menu listing every palette in `colors.py` (DoomOne, Dracula, GruvboxDark, MonokaiPro, Nord, OceanicNext, Palenight, SolarizedDark, SolarizedLight, TomorrowNight), applies the pick, and restarts qtile. No more hand-editing the config to change colours — the thing users kept asking for.
+- **Default palette stays untouched.** DoomOne remains the shipped default exactly as before; the switcher only ever *adds* an override in `~/.config/qtile/active_theme`, and picking "DoomOne" clears that file to return to the pristine default. `config.py` falls back to DoomOne when the file is absent or names an unknown palette.
+- New palettes are picked up automatically: drop another named block into `colors.py` and it appears in the menu (downloadable palettes from DistroTube colorz / terminal.sexy / Gogh, etc.).
+
+### Technical Details
+- `scripts/theme-switcher.sh` (new, executable): derives the palette list dynamically from `colors.py` (`grep` the top-level `Name =` assignments), marks the default + currently-active entry in the rofi menu, validates the choice against the known list, writes/clears `active_theme`, then `qtile cmd-obj -o cmd -f restart`. Lightweight in-skel helper styled like the sibling `fastcompmgr-toggle.sh` (rofi reuses `rofi/launcher2.rasi` with `-no-config -dmenu`).
+- `config.py`: the hardcoded `colors = colors.DoomOne` became a guarded lookup — read `~/.config/qtile/active_theme`, `getattr(colors, pick)` only when it's a real palette, else `DoomOne`. `ruff check` clean; `py_compile` clean.
+- Keybinding `Super + Shift + T` chosen from [Kiro-HQ/KEYBINDINGS_FREE.md](/home/erik/Insync/Kiro/Kiro-HQ/KEYBINDINGS_FREE.md) (Super+Ctrl+T was NOT free); the free-keys ledger was updated to record the claim.
+- Regenerated `keybindings.txt` via `/kiro-create-keybindings`: the new opener appears under System & Session as "theme switcher — rofi colour palette picker".
+
 ## 2026.06.02
 
 ### What Changed

@@ -66,6 +66,8 @@ keys = [
 
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
+    Key([mod, "shift"], "t", lazy.spawn(home + "/.config/qtile/scripts/theme-switcher.sh"),
+        desc="Pick a qtile colour theme (rofi)"),
 
     # ALT + SHIFT KEYS
     Key(["mod1", "shift"], "r", lazy.reload_config()),
@@ -270,8 +272,20 @@ for i in groups:
             lazy.group[i.name].toscreen()),
     ])
 
-# ── Layouts (qtile-erik set, styled with DoomOne) ────────────────────────
-colors = colors.DoomOne
+# ── Theme selection (default DoomOne; honored from the switcher if set) ──────
+# scripts/theme-switcher.sh (Super+Shift+T) writes a palette name to
+# ~/.config/qtile/active_theme. Missing or invalid → the shipped DoomOne
+# default is used untouched.
+_active_theme_file = os.path.expanduser("~/.config/qtile/active_theme")
+_palette = "DoomOne"
+try:
+    with open(_active_theme_file) as _fh:
+        _pick = _fh.read().strip()
+    if _pick and hasattr(colors, _pick):
+        _palette = _pick
+except OSError:
+    pass
+colors = getattr(colors, _palette)
 
 layout_theme = {"border_width": 2,
                 "margin": 12,

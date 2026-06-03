@@ -1,7 +1,7 @@
 ###############################################################################
 #  KEYBINDINGS — qtile
 #  Source: etc/skel/.config/qtile/config.py + etc/skel/.config/qtile/sxhkd/sxhkdrc
-#  Generated: 2026.06.01 by /kiro-keybindings-all-twms — DO NOT EDIT BY HAND
+#  Generated: 2026.06.03 by /kiro-create-keybindings — DO NOT EDIT BY HAND
 ###############################################################################
 
 ── 1. Applications & Launchers ───────────────────────────────────────────────
@@ -131,6 +131,7 @@
 
 ── 8. System & Session ────────────────────────────────────────────────────────
   super + shift + r         restart qtile
+  super + shift + t         theme switcher — rofi colour palette picker
   alt + shift + r           reload qtile config (lightweight)
   super + shift + s         reload sxhkd
   super + x                 archlinux-logout
