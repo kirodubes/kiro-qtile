@@ -1,6 +1,16 @@
 # If using transparency, make sure you add (background="#00000000") to 'Screen' line(s).
 # Then, you can use RGBA color codes to add transparency to the colors below.
 # For ex: colors = [["#282c34ee", "#282c34dd"], ...
+#
+# Curated for the Super+Shift+T theme switcher (scripts/theme-switcher.sh): a
+# small, deliberately *distinct* set — each palette has a different background
+# AND a different hero accent in slot [8] (the focused-window border + active
+# workspace circle), so switching is obvious at a glance. DoomOne is the shipped
+# default and is left untouched. Add a palette by pasting another 10-row block
+# below; it appears in the switcher automatically.
+#
+# Slot map: [0] bg  [1] fg  [2] dark  [3] red  [4] green  [5] yellow
+#           [6] blue  [7] magenta  [8] hero accent (border/active)  [9] grey
 
 DoomOne = [
     ["#282c34", "#282c34"], # bg
@@ -11,11 +21,11 @@ DoomOne = [
     ["#da8548", "#da8548"], # color04
     ["#51afef", "#51afef"], # color05
     ["#c678dd", "#c678dd"], # color06
-    ["#46d9ff", "#46d9ff"], # color15
+    ["#46d9ff", "#46d9ff"], # color15  ← hero: cyan
     ["#7d7d7d", "#7d7d7d"]  # color[9]
     ]
 
-Dracula  = [
+Dracula = [
     ["#282a36", "#282a36"], # bg
     ["#f8f8f2", "#f8f8f2"], # fg
     ["#000000", "#000000"], # color01
@@ -23,110 +33,85 @@ Dracula  = [
     ["#50fa7b", "#50fa7b"], # color03
     ["#f1fa8c", "#f1fa8c"], # color04
     ["#bd93f9", "#bd93f9"], # color05
-    ["#ff79c6", "#ff79c6"], # color06
-    ["#9aedfe", "#9aedfe"], # color15
+    ["#bd93f9", "#bd93f9"], # color06
+    ["#ff79c6", "#ff79c6"], # color15  ← hero: pink
     ["#7d7d7d", "#7d7d7d"]  # color[9]
     ]
 
-GruvboxDark  = [
-    ["#282828", "#282828"], # color[0]
-    ["#ebdbb2", "#ebdbb2"], # color[1]
-    ["#000000", "#000000"], # color[2]
-    ["#fb4934", "#fb4934"], # color[3]
-    ["#98971a", "#98971a"], # color[4]
-    ["#d79921", "#d79921"], # color[5]
-    ["#83a598", "#83a598"], # color[6]
-    ["#d3869b", "#d3869b"], # color[7]
-    ["#b8bb26", "#b8bb26"], # color[8]
-    ["#7d7d7d", "#7d7d7d"]  # color[9]
-    ]
-MonokaiPro = [
-    ["#2D2A2E", "#2D2A2E"], # color[0]
-    ["#FCFCFA", "#FCFCFA"], # color[1]
-    ["#403E41", "#403E41"], # color[2]
-    ["#FF6188", "#FF6188"], # color[3]
-    ["#A9DC76", "#A9DC76"], # color[4]
-    ["#FFD866", "#FFD866"], # color[5]
-    ["#FC9867", "#FC9867"], # color[6]
-    ["#AB9DF2", "#AB9DF2"], # color[7]
-    ["#78DCE8", "#78DCE8"], # color[8]
+GruvboxDark = [
+    ["#282828", "#282828"], # bg
+    ["#ebdbb2", "#ebdbb2"], # fg
+    ["#000000", "#000000"], # color01
+    ["#fb4934", "#fb4934"], # color02
+    ["#98971a", "#98971a"], # color03
+    ["#d79921", "#d79921"], # color04
+    ["#83a598", "#83a598"], # color05
+    ["#d3869b", "#d3869b"], # color06
+    ["#b8bb26", "#b8bb26"], # color15  ← hero: lime
     ["#7d7d7d", "#7d7d7d"]  # color[9]
     ]
 
 Nord = [
-    ["#2E3440", "#2E3440"], # color[0]
-    ["#D8DEE9", "#D8DEE9"], # color[1]
-    ["#3B4252", "#3B4252"], # color[2]
-    ["#BF616A", "#BF616A"], # color[3]
-    ["#A3BE8C", "#A3BE8C"], # color[4]
-    ["#EBCB8B", "#EBCB8B"], # color[5]
-    ["#81A1C1", "#81A1C1"], # color[6]
-    ["#B48EAD", "#B48EAD"], # color[7]
-    ["#88C0D0", "#88C0D0"], # color[8]
+    ["#2E3440", "#2E3440"], # bg
+    ["#D8DEE9", "#D8DEE9"], # fg
+    ["#3B4252", "#3B4252"], # color01
+    ["#BF616A", "#BF616A"], # color02
+    ["#A3BE8C", "#A3BE8C"], # color03
+    ["#EBCB8B", "#EBCB8B"], # color04
+    ["#81A1C1", "#81A1C1"], # color05
+    ["#B48EAD", "#B48EAD"], # color06
+    ["#88C0D0", "#88C0D0"], # color15  ← hero: frost blue
     ["#7d7d7d", "#7d7d7d"]  # color[9]
     ]
 
-OceanicNext = [
-    ["#1b2b34", "#1b2b34"], # color[0]
-    ["#d8dee9", "#d8dee9"], # color[1]
-    ["#29414f", "#29414f"], # color[2]
-    ["#ec5f67", "#ec5f67"], # color[3]
-    ["#99c794", "#99c794"], # color[4]
-    ["#fac863", "#fac863"], # color[5]
-    ["#6699cc", "#6699cc"], # color[6]
-    ["#c594c5", "#c594c5"], # color[7]
-    ["#5fb3b3", "#5fb3b3"], # color[8]
-    ["#7d7d7d", "#7d7d7d"]  # color[9]
+TokyoNight = [
+    ["#1a1b26", "#1a1b26"], # bg
+    ["#c0caf5", "#c0caf5"], # fg
+    ["#15161e", "#15161e"], # color01
+    ["#f7768e", "#f7768e"], # color02
+    ["#9ece6a", "#9ece6a"], # color03
+    ["#e0af68", "#e0af68"], # color04
+    ["#7aa2f7", "#7aa2f7"], # color05
+    ["#bb9af7", "#bb9af7"], # color06
+    ["#7aa2f7", "#7aa2f7"], # color15  ← hero: blue
+    ["#565f89", "#565f89"]  # color[9]
     ]
 
-Palenight = [
-    ["#292d3e", "#292d3e"], # color[0]
-    ["#d0d0d0", "#d0d0d0"], # color[1]
-    ["#434758", "#434758"], # color[2]
-    ["#f07178", "#f07178"], # color[3]
-    ["#c3e88d", "#c3e88d"], # color[4]
-    ["#ffcb6b", "#ffcb6b"], # color[5]
-    ["#82aaff", "#82aaff"], # color[6]
-    ["#c792ea", "#c792ea"], # color[7]
-    ["#89ddff", "#89ddff"], # color[8]
-    ["#7d7d7d", "#7d7d7d"]  # color[9]
+CatppuccinMocha = [
+    ["#1e1e2e", "#1e1e2e"], # bg
+    ["#cdd6f4", "#cdd6f4"], # fg
+    ["#181825", "#181825"], # color01
+    ["#f38ba8", "#f38ba8"], # color02
+    ["#a6e3a1", "#a6e3a1"], # color03
+    ["#f9e2af", "#f9e2af"], # color04
+    ["#89b4fa", "#89b4fa"], # color05
+    ["#cba6f7", "#cba6f7"], # color06
+    ["#cba6f7", "#cba6f7"], # color15  ← hero: mauve
+    ["#6c7086", "#6c7086"]  # color[9]
     ]
 
-SolarizedDark = [
-    ["#002b36", "#002b36"], # color[0]
-    ["#839496", "#839496"], # color[1]
-    ["#073642", "#073642"], # color[2]
-    ["#dc322f", "#dc322f"], # color[3]
-    ["#859900", "#859900"], # color[4]
-    ["#b58900", "#b58900"], # color[5]
-    ["#268bd2", "#268bd2"], # color[6]
-    ["#d33682", "#d33682"], # color[7]
-    ["#2aa198", "#2aa198"], # color[8]
-    ["#7d7d7d", "#7d7d7d"]  # color[9]
+Everforest = [
+    ["#2d353b", "#2d353b"], # bg
+    ["#d3c6aa", "#d3c6aa"], # fg
+    ["#232a2e", "#232a2e"], # color01
+    ["#e67e80", "#e67e80"], # color02
+    ["#a7c080", "#a7c080"], # color03
+    ["#dbbc7f", "#dbbc7f"], # color04
+    ["#7fbbb3", "#7fbbb3"], # color05
+    ["#d699b6", "#d699b6"], # color06
+    ["#a7c080", "#a7c080"], # color15  ← hero: green
+    ["#859289", "#859289"]  # color[9]
     ]
 
 SolarizedLight = [
-    ["#fdf6e3", "#fdf6e3"], # color[0]
-    ["#657b83", "#657b83"], # color[1]
-    ["#ece5ac", "#ece5ac"], # color[2]
-    ["#dc322f", "#dc322f"], # color[3]
-    ["#859900", "#859900"], # color[4]
-    ["#b58900", "#b58900"], # color[5]
-    ["#268bd2", "#268bd2"], # color[6]
-    ["#d33682", "#d33682"], # color[7]
-    ["#2aa198", "#2aa198"], # color[8]
-    ["#7d7d7d", "#7d7d7d"]  # color[9]
-    ]
-
-TomorrowNight = [
-    ["#1d1f21", "#1d1f21"], # color[0]
-    ["#c5c8c6", "#c5c8c6"], # color[1]
-    ["#373b41", "#373b41"], # color[2]
-    ["#cc6666", "#cc6666"], # color[3]
-    ["#b5bd68", "#b5bd68"], # color[4]
-    ["#e6c547", "#e6c547"], # color[5]
-    ["#81a2be", "#81a2be"], # color[6]
-    ["#b294bb", "#b294bb"], # color[7]
-    ["#70c0ba", "#70c0ba"], # color[8]
+    ["#fdf6e3", "#fdf6e3"], # bg  (the one bright theme)
+    ["#657b83", "#657b83"], # fg
+    ["#ece5ac", "#ece5ac"], # color01
+    ["#dc322f", "#dc322f"], # color02
+    ["#859900", "#859900"], # color03
+    ["#b58900", "#b58900"], # color04
+    ["#268bd2", "#268bd2"], # color05
+    ["#d33682", "#d33682"], # color06
+    ["#2aa198", "#2aa198"], # color15  ← hero: teal
     ["#7d7d7d", "#7d7d7d"]  # color[9]
     ]

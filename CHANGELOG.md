@@ -13,6 +13,10 @@
 - Keybinding `Super + Shift + T` chosen from [Kiro-HQ/KEYBINDINGS_FREE.md](/home/erik/Insync/Kiro/Kiro-HQ/KEYBINDINGS_FREE.md) (Super+Ctrl+T was NOT free); the free-keys ledger was updated to record the claim.
 - Regenerated `keybindings.txt` via `/kiro-create-keybindings`: the new opener appears under System & Session as "theme switcher — rofi colour palette picker".
 
+### Curated distinct palettes + dedicated rofi menu
+- **Replaced the lookalike palette set in `colors.py` with 8 visually distinct schemes.** The old 10 were nearly all charcoal-bg + cyan-accent (only Gruvbox/SolarizedLight stood out), so switching looked like nothing happened. Dropped the five that were near-duplicates (MonokaiPro, OceanicNext, Palenight, SolarizedDark, TomorrowNight) and added TokyoNight, CatppuccinMocha, Everforest. Each palette now carries a **different hero accent in slot [8]** (focused-window border + active-workspace circle): DoomOne cyan, Dracula pink, Gruvbox lime, Nord frost-blue, TokyoNight blue, Catppuccin mauve, Everforest green, SolarizedLight teal — so a switch is obvious at a glance. Hex values sourced from the canonical schemes (cross-checked against the adi1090x rofi `colors/*.rasi`). **DoomOne is left byte-for-byte untouched** as the shipped default.
+- **Dedicated menu theme `rofi/theme-switcher.rasi`** — a small single-column picker adapted from adi1090x's applet style, flattened to be self-contained (colours + `Iosevka` font inlined, no `~/.config/rofi` dependency). Chrome is fixed (DoomOne-based) so the picker looks the same whichever palette is active. `theme-switcher.sh` now points at it instead of the borrowed `launcher2.rasi`.
+
 ## 2026.06.02
 
 ### What Changed

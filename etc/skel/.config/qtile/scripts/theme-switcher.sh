@@ -10,7 +10,7 @@ set -euo pipefail
 QTILE_DIR="$HOME/.config/qtile"
 COLORS_PY="$QTILE_DIR/colors.py"
 ACTIVE_FILE="$QTILE_DIR/active_theme"
-ROFI_THEME="$QTILE_DIR/rofi/launcher2.rasi"
+ROFI_THEME="$QTILE_DIR/rofi/theme-switcher.rasi"
 DEFAULT_THEME="DoomOne"
 
 # Palette names = the top-level assignments in colors.py (e.g. "DoomOne = [").
