@@ -23,7 +23,7 @@ The Kiro qtile configuration. A merge of two upstream configs:
 | `config.py` | merged | qtile config: DTOS bar + qtile-erik window keys + sxhkd autostart hook |
 | `colors.py` | qtile (DTOS) | colour schemes; `DoomOne` is the active default |
 | `sxhkd/sxhkdrc` | qtile-erik | authoritative app / media / screenshot keybindings |
-| `scripts/` | qtile-erik | autostart.sh (starts sxhkd), compositor toggles (fastcompmgr/picom), system-overview conky |
+| `scripts/` | qtile-erik | autostart.sh (starts sxhkd), compositor toggles (fastcompmgr/picom) |
 | `rofi/` | qtile-erik | rofi launcher themes referenced by sxhkd |
 | `icons/` | qtile + qtile-erik | bar icon (`cachyos.svg`) + horizontal battery icons |
 | `arcobattery.py` | qtile-erik | battery icon widget (available, not enabled by default) |
@@ -36,7 +36,7 @@ Deploy to `~/.config/qtile/`. On first start the `startup_once` hook runs
 ## Notes / things to revisit
 
 - App targets are kept **verbatim** from qtile-erik (vivaldi, archlinux-logout,
-  variety, conky, xfce4-*). Swap to Kiro equivalents later if needed.
+  variety, xfce4-*). Swap to Kiro equivalents later if needed.
 - The DTOS emacs/dmscripts `KeyChord` menus were intentionally dropped (they collided
   with qtile-erik's `Super+e`=code and `Super+p`=wallpaper).
 - Bar icon is still the DTOS `cachyos.svg`; replace with a Kiro logo when one exists.
