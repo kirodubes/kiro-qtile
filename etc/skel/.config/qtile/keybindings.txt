@@ -1,7 +1,7 @@
 ###############################################################################
 #  KEYBINDINGS — qtile
 #  Source: etc/skel/.config/qtile/config.py + etc/skel/.config/qtile/sxhkd/sxhkdrc
-#  Generated: 2026.06.03 by /kiro-create-keybindings — DO NOT EDIT BY HAND
+#  Generated: 2026.06.08 by /kiro-keybindings-all-twms-xfce — DO NOT EDIT BY HAND
 ###############################################################################
 
 ── 1. Applications & Launchers ───────────────────────────────────────────────
@@ -26,7 +26,7 @@
   super + F5                meld
   super + F6                vlc
   super + F7                virtualbox
-  super + F9                lollypop (audio player)
+  super + F9                virt-manager (virtual machine manager)
   super + F10               spotify
   super + v                 pavucontrol (audio mixer)
   ctrl + alt + e            archlinux-tweak-tool
