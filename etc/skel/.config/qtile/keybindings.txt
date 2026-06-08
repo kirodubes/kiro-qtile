@@ -37,6 +37,7 @@
   ctrl + alt + b            brave (browser)
   ctrl + alt + c            chromium
   ctrl + alt + g            chromium
+  ctrl + alt + i            kiro-iso-builder
   ctrl + alt + f            firefox
   ctrl + alt + v            vivaldi (browser)
   ctrl + alt + p            pamac-manager
