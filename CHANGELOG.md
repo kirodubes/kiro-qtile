@@ -7,16 +7,19 @@
   `qtile-wayland.desktop` and added a `qtile-generic.desktop` in both session dirs, all named "Qtile". The
   session fix only knew the old `wayland-sessions/qtile.desktop`, so it hid nothing any more. Now only the
   X11 "Qtile" entry is shown again.
+- qtile now applies a saved arandr layout from `~/.screenlayout/<username>.sh` at login, like awesome, bspwm, chadwm, dusk, herbstluftwm and i3. It was the only script-based Kiro TWM without it.
 
 ### Technical Details
 - `kiro-qtile-fix-session` appends `NoDisplay=true` to `xsessions/qtile-generic.desktop` and
   `wayland-sessions/{qtile,qtile-wayland,qtile-generic}.desktop` when present. The old name stays in the list
   so older qtile releases are still covered. Idempotent (tested twice on a kiro-next VM).
 - The hook gains the three new paths as `Target`s so a qtile upgrade re-runs the fix.
+- Added the canonical monitor-layout block from Kiro-HQ's AUTOSTART_TEMPLATE to `scripts/autostart.sh`, before the compositor. It uses `$(whoami)`, so no personal filename ships in `/etc/skel` (the reason the old `erik.sh` block was dropped).
 
 ### Files Modified
 - `usr/bin/kiro-qtile-fix-session`
 - `usr/share/libalpm/hooks/kiro-qtile-fix-session.hook`
+- `etc/skel/.config/qtile/scripts/autostart.sh`
 
 ## 2026.09.28
 

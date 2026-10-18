@@ -19,6 +19,11 @@ run() {
   fi
 }
 
+# ── Monitor layout ────────────────────────────────────────────────────────────
+# Apply a saved arandr/xrandr screen layout named after the current user.
+# Generate your layout with arandr, save it to ~/.screenlayout/<username>.sh
+[ -f "$HOME/.screenlayout/$(whoami).sh" ] && sh "$HOME/.screenlayout/$(whoami).sh"
+
 # ── Compositor ────────────────────────────────────────────────────────────────
 run fastcompmgr -c                                   # Transparency and shadows
 
