@@ -4,9 +4,12 @@ Operation = Install
 Operation = Upgrade
 Type = Path
 Target = usr/share/xsessions/qtile.desktop
+Target = usr/share/xsessions/qtile-generic.desktop
 Target = usr/share/wayland-sessions/qtile.desktop
+Target = usr/share/wayland-sessions/qtile-wayland.desktop
+Target = usr/share/wayland-sessions/qtile-generic.desktop
 
 [Action]
-Description = Fixing the qtile session Exec line and hiding the Wayland session
+Description = Fixing the qtile session Exec line and hiding the other qtile sessions
 When = PostTransaction
 Exec = /usr/bin/kiro-qtile-fix-session

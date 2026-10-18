@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026.10.18
+
+### What Changed
+- SDDM listed Qtile four times (Qtile ×2, Qtile (Wayland) ×2). qtile 0.37.1 renamed its Wayland session to
+  `qtile-wayland.desktop` and added a `qtile-generic.desktop` in both session dirs, all named "Qtile". The
+  session fix only knew the old `wayland-sessions/qtile.desktop`, so it hid nothing any more. Now only the
+  X11 "Qtile" entry is shown again.
+
+### Technical Details
+- `kiro-qtile-fix-session` appends `NoDisplay=true` to `xsessions/qtile-generic.desktop` and
+  `wayland-sessions/{qtile,qtile-wayland,qtile-generic}.desktop` when present. The old name stays in the list
+  so older qtile releases are still covered. Idempotent (tested twice on a kiro-next VM).
+- The hook gains the three new paths as `Target`s so a qtile upgrade re-runs the fix.
+
+### Files Modified
+- `usr/bin/kiro-qtile-fix-session`
+- `usr/share/libalpm/hooks/kiro-qtile-fix-session.hook`
+
 ## 2026.09.28
 
 ### What Changed

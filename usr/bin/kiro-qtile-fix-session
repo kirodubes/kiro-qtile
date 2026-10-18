@@ -13,14 +13,15 @@
 #   gets the literal token "systemctl and dies with a syntax error. The
 #   session lasts under a second and SDDM returns to the greeter.
 #   This rewrites Exec= to the plain form, which survives word splitting,
-#   and hides the Wayland entry (Kiro qtile is X11).
+#   and hides every other qtile entry (Kiro qtile is X11). qtile 0.37.1
+#   ships qtile-wayland.desktop plus a qtile-generic.desktop in both session
+#   dirs, all named "Qtile", so SDDM listed Qtile four times.
 # Why:
 #   Both files belong to the qtile package, so every qtile upgrade puts
 #   the broken Exec back. A pacman hook runs this again each time.
 #####################################################################
 
 xsession=/usr/share/xsessions/qtile.desktop
-wayland_session=/usr/share/wayland-sessions/qtile.desktop
 
 if [ ! -f "$xsession" ]; then
     echo "kiro-qtile-fix-session: $xsession is missing -- qtile session left unpatched" >&2
@@ -31,8 +32,12 @@ fi
 # working if upstream changes the wrapper again.
 sed -i 's|^Exec=.*|Exec=qtile start -b x11|' "$xsession"
 
-# The Wayland session is hidden rather than removed, same as kiro-xfce does
-# with xfce-wayland.desktop. Absent is fine -- not every box has it.
-[ -f "$wayland_session" ] || exit 0
-grep -q '^NoDisplay=true$' "$wayland_session" && exit 0
-printf 'NoDisplay=true\n' >> "$wayland_session"
+# Hidden rather than removed, same as kiro-xfce does with xfce-wayland.desktop.
+# Absent files are fine -- the set differs between qtile releases.
+for f in /usr/share/xsessions/qtile-generic.desktop \
+         /usr/share/wayland-sessions/qtile.desktop \
+         /usr/share/wayland-sessions/qtile-wayland.desktop \
+         /usr/share/wayland-sessions/qtile-generic.desktop; do
+    [ -f "$f" ] || continue
+    grep -q '^NoDisplay=true$' "$f" || printf 'NoDisplay=true\n' >> "$f"
+done
