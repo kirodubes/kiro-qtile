@@ -1,7 +1,7 @@
 ###############################################################################
 #  KEYBINDINGS — qtile
 #  Source: etc/skel/.config/qtile/config.py
-#  Generated: 2026.06.30
+#  Generated: 2026.10.19
 #  Reference for the default bindings. Changed yours? Edit this file to match.
 ###############################################################################
 
@@ -54,6 +54,11 @@
   alt + F2                  xfce4-appfinder (collapsed)
   alt + F3                  xfce4-appfinder
   super + ctrl + s          kiro-keybindings (cheatsheet)
+  super + ctrl + a          pavucontrol
+  super + ctrl + shift + a  alacritty -e claude (AI agent)
+  super + shift + b         vivaldi-stable (browser)
+  super + shift + n         code (editor)
+  super + shift + m         spotify
 
 ── 2. Window Management ───────────────────────────────────────────────────────
   super + f                 toggle fullscreen
@@ -123,6 +128,9 @@
   alt + Up                  wallpaper: pause rotation
   alt + Down                wallpaper: resume rotation
   super + ctrl + space      wallpaper: selector
+  XF86AudioMicMute          toggle microphone mute
+  alt + XF86AudioRaiseVolume  raise volume by 1%
+  alt + XF86AudioLowerVolume  lower volume by 1%
 
 ── 7. Screenshots ─────────────────────────────────────────────────────────────
   Print                     scrot — full screen, saved to Pictures

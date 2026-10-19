@@ -268,6 +268,14 @@ keys.extend([
     Key(["mod1"], "Down", lazy.spawn("variety --resume")),
     Key([mod, "control"], "space", lazy.spawn("variety --selector")),
     Key([], "F12", lazy.spawn("alacritty")),
+    Key([mod, "control"], "a", lazy.spawn("pavucontrol")),
+    Key([mod, "control", "shift"], "a", lazy.spawn("alacritty -e claude")),
+    Key([mod, "shift"], "b", lazy.spawn("vivaldi-stable")),
+    Key([mod, "shift"], "n", lazy.spawn("code")),
+    Key([mod, "shift"], "m", lazy.spawn("spotify")),
+    Key([], "XF86AudioMicMute", lazy.spawn("pamixer --default-source -t")),
+    Key(["mod1"], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 1")),
+    Key(["mod1"], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 1")),
 ])
 
 
