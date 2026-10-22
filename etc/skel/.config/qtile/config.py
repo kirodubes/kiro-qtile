@@ -189,7 +189,7 @@ keys.extend([
     Key([mod, "control"], "s", lazy.spawn("kiro-keybindings")),
     Key([mod], "e", lazy.spawn("code")),
     Key([mod], "x", lazy.spawn("archlinux-logout")),
-    Key([mod, "shift"], "x", lazy.spawn("edu-powermenu")),
+    Key([mod, "shift"], "x", lazy.spawn("kiro-powermenu")),
     Key([mod], "r", lazy.spawn(
         "rofi -no-config -no-lazy-grab -show drun -modi drun "
         f"-theme {home}/.config/qtile/rofi/launcher2.rasi")),

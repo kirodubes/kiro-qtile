@@ -145,7 +145,7 @@
   super + x                 archlinux-logout
   ctrl + alt + k            archlinux-logout
   ctrl + alt + l            archlinux-logout
-  super + shift + x         edu-powermenu
+  super + shift + x         kiro-powermenu
   super + shift + Escape    xkill (click a window to force-kill)
   ctrl + shift + Escape     xfce4-taskmanager
   ctrl + alt + End          btop (in alacritty)
