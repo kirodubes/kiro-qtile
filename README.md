@@ -48,6 +48,12 @@ Existing users can pull the config into their own home:
 cp -rT /etc/skel ~/
 ```
 
+## Languages
+
+`scripts/theme-switcher.sh` follows the system language: Dutch, German, Spanish, French, Portuguese (Brazil), Russian, Hungarian, Italian, Turkish, Polish, Japanese,
+Chinese (simplified) and Romanian, with English as the fallback. The translations live in `po/`
+(gettext); after changing the script's text run `bash po/make-mo.sh`.
+
 ## Websites
 
 Information : https://erikdubois.be

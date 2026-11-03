@@ -1,0 +1,31 @@
+# Portuguese translations for kiro-qtile package.
+# Copyright (C) 2026 THE kiro-qtile'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the kiro-qtile package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kiro-qtile\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-03 05:37+0100\n"
+"PO-Revision-Date: 2026-11-03 05:37+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: etc/skel/.config/qtile/scripts/theme-switcher.sh:29
+msgid "qtile theme"
+msgstr "Tema do qtile"
+
+#. TRANSLATORS: marker after the shipped default palette's name in the theme list.
+#: etc/skel/.config/qtile/scripts/theme-switcher.sh:31
+msgid "(default)"
+msgstr "(padrão)"
+
+#: etc/skel/.config/qtile/scripts/theme-switcher.sh:36
+msgid "No palettes found in colors.py"
+msgstr "Nenhuma paleta encontrada em colors.py"

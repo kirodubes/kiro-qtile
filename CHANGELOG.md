@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026.11.03
+
+### What Changed
+- The theme switcher (Super+Shift+T) speaks 13 languages: Dutch, German, Spanish, French, Portuguese (Brazil), Russian, Hungarian, Italian, Turkish, Polish, Japanese, Chinese (simplified) and Romanian: the rofi prompt, the "(default)" marker and
+  the no-palettes notification. English stays the fallback.
+
+### Technical Details
+- gettext domain `kiro-qtile`, `.mo` files in skel `qtile/scripts/locale/` next to the script. The "(default)"
+  marker is stripped from the choice through the same translated variable, never a hard-coded English string, so
+  picking the default works in every language (tested with de and ja's full-width （デフォルト）).
+- `po/make-mo.sh` extracts, merges and compiles; `msgfmt --check` + `pofilter` clean.
+
+### Files Modified
+- etc/skel/.config/qtile/scripts/theme-switcher.sh, etc/skel/.config/qtile/scripts/locale/ (new)
+- po/ (new), README.md, CLAUDE.md
+
 ## 2026.10.22
 
 ### Power menu key calls kiro-powermenu
