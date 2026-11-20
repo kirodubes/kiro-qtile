@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026.11.20
+
+### What Changed
+- **The volume icon is back in the tray.** volctl 1.x (the GTK4 rewrite) only offers a StatusNotifierItem icon,
+  which the XEmbed systray of qtile's Systray widget cannot show, so volctl ran without any visible icon. The session now starts
+  `snixembed`, which turns StatusNotifierItem icons into XEmbed tray icons.
+
+### Technical Details
+- `autostart.sh`: `snixembed --fork` runs before `volctl`, only when it is installed and not already
+  running. `--fork` returns once it owns the watcher name, so volctl finds it when it starts.
+- The package PKGBUILD lists `snixembed` as an optional dependency; ATT and the ISO install it with this session.
+- Existing users keep their old `~/.config` copy until kiro-skell or a manual copy updates it.
+
+### Files Modified
+- `etc/skel/.config/qtile/scripts/autostart.sh`
+- `CHANGELOG.md`
+
 ## 2026.11.03
 
 ### What Changed

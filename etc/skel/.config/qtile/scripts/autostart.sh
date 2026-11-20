@@ -36,6 +36,10 @@ run /usr/lib/xfce4/notifyd/xfce4-notifyd             # Desktop notification daem
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1  # Polkit auth popups (sudo GUI)
 
 # ── Volume control ────────────────────────────────────────────────────────────
+# volctl 1.x only offers a StatusNotifierItem icon; qtile's Systray widget is XEmbed.
+# snixembed bridges the two. --fork returns once it owns the watcher name, so
+# volctl finds it at start-up.
+command -v snixembed >/dev/null && ! pgrep -x snixembed >/dev/null && snixembed --fork
 run volctl                                           # PipeWire/PulseAudio volume tray
 
 # ── Keyboard ──────────────────────────────────────────────────────────────────
